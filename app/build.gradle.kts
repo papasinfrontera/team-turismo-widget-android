@@ -12,8 +12,8 @@ android {
         applicationId = "com.aimindset.teamturismo.widget"
         minSdk = 26
         targetSdk = 35
-        versionCode = 2
-        versionName = "2.9.1"
+        versionCode = 3
+        versionName = "2.9.2"
     }
     buildFeatures { compose = true }
     compileOptions {
