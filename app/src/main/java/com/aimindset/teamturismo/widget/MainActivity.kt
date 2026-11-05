@@ -27,7 +27,7 @@ class MainActivity : Activity() {
             gravity = Gravity.CENTER
         })
         container.addView(TextView(this).apply {
-            text = "Tulio Ontiveros · Widget Android V2.9"
+            text = "Tulio Ontiveros · Widget Android V2.9.2"
             textSize = 15f
             gravity = Gravity.CENTER
             setPadding(0, 6.dp(), 0, 20.dp())
@@ -50,7 +50,7 @@ class MainActivity : Activity() {
             setOnClickListener {
                 val share = Intent(Intent.ACTION_SEND).apply {
                     type = "text/plain"
-                    putExtra(Intent.EXTRA_TEXT, LINK_CARD)
+                    putExtra(Intent.EXTRA_TEXT, LINK_SHARE_CARD)
                 }
                 startActivity(Intent.createChooser(share, "Compartir Team Turismo"))
             }
@@ -72,3 +72,6 @@ class MainActivity : Activity() {
 
     private fun Int.dp(): Int = (this * resources.displayMetrics.density).toInt()
 }
+
+/** Enlace exclusivo para compartir desde Android: mismo HTML y miniatura OG, URL nueva para la caché de WhatsApp. */
+const val LINK_SHARE_CARD = "https://team-turismo-tulio-ontiveros.vercel.app/compartir-v28/?origen=widget-android-v292"
