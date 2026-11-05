@@ -1,6 +1,7 @@
 package com.aimindset.teamturismo.widget
 
 import android.content.Context
+import android.content.Intent
 import androidx.compose.runtime.Composable
 import androidx.glance.GlanceId
 import androidx.glance.GlanceModifier
@@ -21,17 +22,17 @@ import androidx.glance.action.clickable
  */
 class TeamTurismoWidget : GlanceAppWidget() {
     override suspend fun provideGlance(context: Context, id: GlanceId) {
-        provideContent { WidgetFace() }
+        provideContent { WidgetFace(Intent(context, WidgetOpenActivity::class.java)) }
     }
 
     @Composable
-    private fun WidgetFace() {
+    private fun WidgetFace(openIntent: Intent) {
         Image(
             provider = ImageProvider(R.drawable.team_widget_horizontal),
             contentDescription = "Team Turismo: QR de contacto de Tulio Ontiveros. Toca para abrir la tarjeta.",
             contentScale = ContentScale.Fit,
             modifier = GlanceModifier.fillMaxSize()
-                .clickable(onClick = actionStartActivity<WidgetOpenActivity>())
+                .clickable(onClick = actionStartActivity(openIntent))
         )
     }
 }
