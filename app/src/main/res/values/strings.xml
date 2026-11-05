@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Team Turismo Widget</string>
+    <string name="widget_description">Tarjeta horizontal de Tulio Ontiveros con código QR para contactar por WhatsApp.</string>
+</resources>
