@@ -25,6 +25,9 @@ assert 'Intent(context, WidgetOpenActivity::class.java)' in widget
 activity = (ROOT/'app/src/main/java/com/aimindset/teamturismo/widget/WidgetOpenActivity.kt').read_text()
 assert 'https://team-turismo-tulio-ontiveros.vercel.app/compartir-v28/' in activity
 assert 'https://team-turismo-tulio-ontiveros.vercel.app/contacto' in activity
+main = (ROOT/'app/src/main/java/com/aimindset/teamturismo/widget/MainActivity.kt').read_text()
+assert 'putExtra(Intent.EXTRA_TEXT, LINK_SHARE_CARD)' in main
+assert 'https://team-turismo-tulio-ontiveros.vercel.app/compartir-v28/?origen=widget-android-v292' in main
 build = (ROOT/'build.gradle.kts').read_text()
 assert build.count('version "2.3.21"') == 2
 for png in ['app/src/main/res/drawable-nodpi/team_widget_horizontal.png','app/src/main/res/drawable-nodpi/team_launcher_icon.png']:
