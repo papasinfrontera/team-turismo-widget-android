@@ -20,7 +20,8 @@ for path in ['app/src/main/AndroidManifest.xml','app/src/main/res/xml/team_widge
     ET.parse(ROOT / path)
 widget = (ROOT/'app/src/main/java/com/aimindset/teamturismo/widget/TeamTurismoWidget.kt').read_text()
 assert 'R.drawable.team_widget_horizontal' in widget
-assert 'actionStartActivity<WidgetOpenActivity>()' in widget
+assert 'actionStartActivity(openIntent)' in widget
+assert 'Intent(context, WidgetOpenActivity::class.java)' in widget
 activity = (ROOT/'app/src/main/java/com/aimindset/teamturismo/widget/WidgetOpenActivity.kt').read_text()
 assert 'https://team-turismo-tulio-ontiveros.vercel.app/compartir-v28/' in activity
 assert 'https://team-turismo-tulio-ontiveros.vercel.app/contacto' in activity
